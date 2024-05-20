@@ -22,9 +22,22 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop>
+    <video id="myVideo" autoplay loop controls>
         <source src="video.mp4" type="video/mp4">
         Ваш браузер не поддерживает воспроизведение видео.
     </video>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const videoElement = document.getElementById('myVideo');
+            // Попробуем воспроизвести видео со звуком, если браузер позволяет
+            videoElement.play().catch(error => {
+                console.log('Автовоспроизведение со звуком не поддерживается без взаимодействия пользователя. Нажмите для воспроизведения.');
+                videoElement.addEventListener('click', () => {
+                    videoElement.play();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
