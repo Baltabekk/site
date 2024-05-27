@@ -3,41 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цитата</title>
+    <title>Математика: Задания</title>
     <style>
-        body, html {
-            margin: 0;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
             padding: 0;
+            background-color: #f0f0f0;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .instruction {
+            margin-bottom: 20px;
+        }
+        .balloon-grid,
+        .train {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 10px;
+        }
+        .balloon,
+        .train-car {
+            background-color: #3F51B5;
+            border-radius: 50%;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .balloon img,
+        .train-car img {
             width: 100%;
-            height: 100%;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 50px;
+            border-radius: 50%;
+        }
+        input[type="text"] {
+            width: 100%;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: white;
+            outline: none;
         }
         video {
             width: 100%;
-            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3F51B5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <video id="myVideo" autoplay loop controls>
-        <source src="video.mp4" type="video/mp4">
-        Ваш браузер не поддерживает воспроизведение видео.
-    </video>
+    <div class="content">
+        <h1>Образование двузначных чисел и счёт десятками</h1>
+        
+        <h2>Тема: Понимание чисел от 1 до 100</h2>
+        
+        <video controls>
+            <source src="C:\Users\balta\OneDrive\Desktop\site\task.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <h2>Задание 1: Напиши в каждом шарике число</h2>
+        
+        <p class="instruction">Напиши в каждом шарике число, которое на 10 больше предыдущего.</p>
+        
+        <div class="balloon-grid">
+            <div class="balloon"><input type="text" value="10" readonly></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+        </div>
+        
+        <div class="balloon-grid">
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+            <div class="balloon"><input type="text"></div>
+        </div>
+        
+        <h2>Задание 1: Собери урожай</h2>
+        
+        <p class="instruction">Определи и запиши, какие числа пропущены на яблоках.</p>
+        
+        <div class="balloon-grid">
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="10" readonly></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="40" readonly></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="60" readonly></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
+            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="90" readonly></div>
+        </div>
+        
+        <h2>Задание 2: Пронумеруй вагоны поезда</h2>
+        
+        <p class="instruction">Расположите числа в пределах 100 в прямом и обратном порядке.</p>
+        
+        <div class="train">
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text" value="1" readonly></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+        </div>
+        
+        <div class="train">
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text" value="100" readonly></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\rain.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
+        </div>
+        
+        <button class="btn" onclick="checkAnswers()">Проверить ответы</button>
+        <p id="score"></p>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const videoElement = document.getElementById('myVideo');
-            // Попробуем воспроизвести видео со звуком, если браузер позволяет
-            videoElement.play().catch(error => {
-                console.log('Автовоспроизведение со звуком не поддерживается без взаимодействия пользователя. Нажмите для воспроизведения.');
-                videoElement.addEventListener('click', () => {
-                    videoElement.play();
-                });
+        function checkAnswers() {
+            const balloonValues1 = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+            const balloonValues2 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
+            let score = 0;
+            let correctCount = 0;
+
+            // Check first set of balloons
+            document.querySelectorAll('.balloon-grid')[0].querySelectorAll('input[type="text"]').forEach((input, index) => {
+                if (input.value == balloonValues1[index]) {
+                    score += 10;
+                    correctCount++;
+                }
             });
-        });
+
+            // Check second set of balloons
+            document.querySelectorAll('.balloon-grid')[1].querySelectorAll('input[type="text"]').forEach((input, index) => {
+                if (input.value == balloonValues1[index + 9]) {
+                    score += 10;
+                    correctCount++;
+                }
+            });
+
+            // Check third set of balloons (apples)
+            const appleValues = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+            document.querySelectorAll('.balloon-grid')[2].querySelectorAll('input[type="text"]').forEach((input, index) => {
+                if (input.value == appleValues[index]) {
+                    score += 10;
+                    correctCount++;
+                }
+            });
+
+            // Check train cars
+            const trainValues1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            document.querySelectorAll('.train')[0].querySelectorAll('input[type="text"]').forEach((input, index) => {
+                if (input.value == trainValues1[index]) {
+                    score += 10;
+                    correctCount++;
+                }
+            });
+
+            const trainValues2 = [100, 99, 98, 97, 96, 95, 94, 93, 92];
+            document.querySelectorAll('.train')[1].querySelectorAll('input[type="text"]').forEach((input, index) => {
+                if (input.value == trainValues2[index]) {
+                    score += 10;
+                    correctCount++;
+                }
+            });
+
+            document.getElementById('score').innerText = `Ваш счет: ${score} из 450`;
+        }
     </script>
 </body>
 </html>
