@@ -1,63 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Генератор дипломной работы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma Work Prompts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f9f9f9;
         }
-        h1 {
-            margin-top: 20px;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .prompts {
+        ul {
             list-style-type: none;
             padding: 0;
         }
-        .prompts li {
+        li {
             margin: 10px 0;
         }
-        .prompts button {
+        button {
             padding: 10px 20px;
-            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
             cursor: pointer;
         }
-        #promptContainer {
+        button:hover {
+            background-color: #0056b3;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
             display: none;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
-        #promptContainer textarea {
+        .modal {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
             width: 100%;
-            height: 200px;
-            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        #promptContainer button {
-            padding: 10px 20px;
-            font-size: 16px;
+        .close-button {
+            float: right;
             cursor: pointer;
+            color: #aaa;
+            font-size: 28px;
+        }
+        .close-button:hover {
+            color: black;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        let prompts = [];
+
+        function showPrompt(title, prompt) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrompt').innerText = prompt;
+            document.getElementById('modalContent').value = '';
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closePrompt() {
+            const title = document.getElementById('modalTitle').innerText;
+            const content = document.getElementById('modalContent').value;
+            prompts.push({ title, content });
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function saveDocument() {
+            let docContent = '';
+            prompts.forEach(prompt => {
+                docContent += `## ${prompt.title}\n\n${prompt.content}\n\n`;
+            });
+
+            const blob = new Blob([docContent], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "Diploma_Work.txt");
+        }
+    </script>
 </head>
 <body>
-    <h1>Генератор дипломной работы</h1>
-    <div class="container">
-        <ul class="prompts">
-            <li><button onclick="showPrompt('Цель проекта и задачи', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи цель проекта и задачи проекта. Объем: 1000 символов.')">Цель проекта и задачи</button></li>
+
+<ul><li><button onclick="showPrompt('Цель проекта и задачи', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи цель проекта и задачи проекта. Объем: 1000 символов.')">Цель проекта и задачи</button></li>
 <li><button onclick="showPrompt('Актуальность проекта', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи актуальность проекта. Объем: 1000 символов.')">Актуальность проекта</button></li>
 <li><button onclick="showPrompt('Целевая аудитория', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи описание целевой аудитории. Объем: 1000 символов.')">Целевая аудитория</button></li>
 <li><button onclick="showPrompt('Методы исследования', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи описание методов исследования. Объем: 2000 символов.')">Методы исследования</button></li>
@@ -96,45 +127,19 @@
 <li><button onclick="showPrompt('Техническая поддержка и обслуживание', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи организацию технической поддержки, обслуживание и обновление сайта. Объем: 2000 символов.')">Техническая поддержка и обслуживание</button></li>
 <li><button onclick="showPrompt('Оценка и анализ результатов', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи анализ показателей эффективности, оценку возврата инвестиций (ROI). Объем: 3000 символов.')">Оценка и анализ результатов</button></li>
 
-        </ul>
+</ul>
+
+<div id="overlay" class="overlay">
+    <div class="modal">
+        <span class="close-button" onclick="closePrompt()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalPrompt"></p>
+        <textarea id="modalContent" rows="10" style="width: 100%;"></textarea>
+        <button onclick="closePrompt()">Сохранить и закрыть</button>
     </div>
+</div>
 
-    <div class="container" id="promptContainer">
-        <h2 id="promptTitle"></h2>
-        <p id="promptText"></p>
-        <textarea id="promptInput"></textarea>
-        <button onclick="savePrompt()">Сохранить</button>
-    </div>
+<button onclick="saveDocument()">Скачать документ</button>
 
-    <div class="container">
-        <button onclick="generateDocument()">Собрать документ</button>
-        <pre id="generatedDocument"></pre>
-    </div>
-
-    <script>
-        const prompts = [];
-        
-        function showPrompt(title, text) {
-            document.getElementById('promptTitle').innerText = title;
-            document.getElementById('promptText').innerText = text;
-            document.getElementById('promptInput').value = '';
-            document.getElementById('promptContainer').style.display = 'flex';
-        }
-
-        function savePrompt() {
-            const title = document.getElementById('promptTitle').innerText;
-            const text = document.getElementById('promptInput').value;
-            prompts.push({ title, text });
-            document.getElementById('promptContainer').style.display = 'none';
-        }
-
-        function generateDocument() {
-            let documentText = '';
-            prompts.forEach(prompt => {
-                documentText += `\n\n### ${prompt.title}\n${prompt.text}`;
-            });
-            document.getElementById('generatedDocument').innerText = documentText;
-        }
-    </script>
 </body>
 </html>
