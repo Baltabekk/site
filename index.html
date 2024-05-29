@@ -1,222 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Математика: Задания</title>
+    <title>Генератор дипломной работы</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-        }
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         h1 {
-            text-align: center;
-            color: #333;
+            margin-top: 20px;
         }
-        p {
-            color: #666;
-        }
-        .instruction {
-            margin-bottom: 20px;
-        }
-        .balloon-grid,
-        .train {
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            gap: 10px;
-        }
-        .balloon,
-        .train-car {
-            background-color: #3F51B5;
-            border-radius: 50%;
-            padding: 15px;
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.5;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .balloon img,
-        .train-car img {
+        .container {
+            max-width: 800px;
             width: 100%;
-            max-width: 50px;
-            border-radius: 50%;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input[type="text"] {
-            width: 100%;
-            text-align: center;
-            border: none;
-            background: none;
-            font-size: 16px;
-            color: white;
-            outline: none;
+        .prompts {
+            list-style-type: none;
+            padding: 0;
         }
-        video {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        .prompts li {
+            margin: 10px 0;
         }
-        .btn {
-            display: inline-block;
-            margin: 20px 0;
+        .prompts button {
             padding: 10px 20px;
             font-size: 16px;
-            color: #fff;
-            background-color: #3F51B5;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            text-align: center;
+        }
+        #promptContainer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        #promptContainer textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        #promptContainer button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Образование двузначных чисел и счёт десятками</h1>
-        
-        <h2>Тема: Понимание чисел от 1 до 100</h2>
-        
-        <video controls>
-            <source src="C:\Users\balta\OneDrive\Desktop\site\task.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <h2>Задание 1: Напиши в каждом шарике число</h2>
-        
-        <p class="instruction">Напиши в каждом шарике число, которое на 10 больше предыдущего.</p>
-        
-        <div class="balloon-grid">
-            <div class="balloon"><input type="text" value="10" readonly></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-        </div>
-        
-        <div class="balloon-grid">
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-            <div class="balloon"><input type="text"></div>
-        </div>
-        
-        <h2>Задание 1: Собери урожай</h2>
-        
-        <p class="instruction">Определи и запиши, какие числа пропущены на яблоках.</p>
-        
-        <div class="balloon-grid">
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="10" readonly></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="40" readonly></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="60" readonly></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text"></div>
-            <div class="balloon"><img src="C:\Users\balta\OneDrive\Desktop\site\apple.png" alt="Apple"><input type="text" value="90" readonly></div>
-        </div>
-        
-        <h2>Задание 2: Пронумеруй вагоны поезда</h2>
-        
-        <p class="instruction">Расположите числа в пределах 100 в прямом и обратном порядке.</p>
-        
-        <div class="train">
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text" value="1" readonly></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-        </div>
-        
-        <div class="train">
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text" value="100" readonly></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\rain.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-            <div class="train-car"><img src="C:\Users\balta\OneDrive\Desktop\site\train.png" alt="Train"><input type="text"></div>
-        </div>
-        
-        <button class="btn" onclick="checkAnswers()">Проверить ответы</button>
-        <p id="score"></p>
+    <h1>Генератор дипломной работы</h1>
+    <div class="container">
+        <ul class="prompts">
+            <li><button onclick="showPrompt('Цель проекта и задачи', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи цель проекта и задачи проекта. Объем: 1000 символов.')">Цель проекта и задачи</button></li>
+<li><button onclick="showPrompt('Актуальность проекта', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи актуальность проекта. Объем: 1000 символов.')">Актуальность проекта</button></li>
+<li><button onclick="showPrompt('Целевая аудитория', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи описание целевой аудитории. Объем: 1000 символов.')">Целевая аудитория</button></li>
+<li><button onclick="showPrompt('Методы исследования', 'Напиши введение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи описание методов исследования. Объем: 2000 символов.')">Методы исследования</button></li>
+<li><button onclick="showPrompt('Объем рынка детской одежды', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи анализ объема рынка детской одежды в регионе/стране. Объем: 2000 символов.')">Объем рынка детской одежды</button></li>
+<li><button onclick="showPrompt('Основные конкуренты', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи анализ основных конкурентов (ассортимент, цены, маркетинговые стратегии). Объем: 2000 символов.')">Основные конкуренты</button></li>
+<li><button onclick="showPrompt('SWOT-анализ', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи SWOT-анализ собственного проекта (сильные и слабые стороны, возможности и угрозы). Объем: 2000 символов.')">SWOT-анализ</button></li>
+<li><button onclick="showPrompt('Преимущества WordPress', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи преимущества использования платформы WordPress (бесплатность, гибкость, большое количество плагинов и тем). Объем: 2000 символов.')">Преимущества WordPress</button></li>
+<li><button onclick="showPrompt('Критерии выбора темы', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи критерии выбора темы (дизайн, функциональность, адаптивность). Объем: 2000 символов.')">Критерии выбора темы</button></li>
+<li><button onclick="showPrompt('Установка и настройка темы', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи процесс установки и настройки темы (основные параметры, кастомизация). Объем: 2000 символов.')">Установка и настройка темы</button></li>
+<li><button onclick="showPrompt('Методы маркетингового исследования', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи описание методов исследования рынка и целевой аудитории. Объем: 2000 символов.')">Методы маркетингового исследования</button></li>
+<li><button onclick="showPrompt('Результаты маркетингового исследования', 'Напиши раздел аналитической части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи результаты маркетингового исследования. Объем: 4000 символов.')">Результаты маркетингового исследования</button></li>
+<li><button onclick="showPrompt('Структура каталога товаров', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи структуру каталога товаров (категории, подкатегории, фильтры). Объем: 2000 символов.')">Структура каталога товаров</button></li>
+<li><button onclick="showPrompt('Добавление товаров', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи процесс добавления товаров (описание, характеристики, фотографии, цены). Объем: 2000 символов.')">Добавление товаров</button></li>
+<li><button onclick="showPrompt('Управление запасами', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи процесс управления запасами (учет наличия товаров, автоматическое обновление). Объем: 2000 символов.')">Управление запасами</button></li>
+<li><button onclick="showPrompt('Выбор платежных систем', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи выбор платежных систем (банковские карты, электронные кошельки, наложенный платеж). Объем: 2000 символов.')">Выбор платежных систем</button></li>
+<li><button onclick="showPrompt('Установка плагинов для платежей', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи процесс установки и настройки плагинов для приема платежей. Объем: 2000 символов.')">Установка плагинов для платежей</button></li>
+<li><button onclick="showPrompt('Обеспечение безопасности платежей', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи меры по обеспечению безопасности платежей. Объем: 2000 символов.')">Обеспечение безопасности платежей</button></li>
+<li><button onclick="showPrompt('Разработка дизайна', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи разработку дизайна (цветовая схема, шрифты, расположение элементов). Объем: 2000 символов.')">Разработка дизайна</button></li>
+<li><button onclick="showPrompt('Удобство использования', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи удобство использования (интуитивная навигация, быстрый поиск товаров, удобная корзина и оформление заказа). Объем: 2000 символов.')">Удобство использования</button></li>
+<li><button onclick="showPrompt('Адаптивность дизайна', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи адаптивность под разные устройства (компьютеры, планшеты, смартфоны). Объем: 2000 символов.')">Адаптивность дизайна</button></li>
+<li><button onclick="showPrompt('Планирование этапов разработки', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи планирование этапов разработки проекта. Объем: 1000 символов.')">Планирование этапов разработки</button></li>
+<li><button onclick="showPrompt('Управление проектом', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи методы управления проектом, включая управление рисками. Объем: 1000 символов.')">Управление проектом</button></li>
+<li><button onclick="showPrompt('Анализ пользовательского опыта', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи анализ пользовательского опыта взаимодействия пользователей с магазином. Объем: 2000 символов.')">Анализ пользовательского опыта</button></li>
+<li><button onclick="showPrompt('Результаты тестирования', 'Напиши раздел проектной части для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи результаты тестирования магазина реальными пользователями. Объем: 2000 символов.')">Результаты тестирования</button></li>
+<li><button onclick="showPrompt('Функциональное тестирование', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи функциональное тестирование (проверка работы всех функций магазина). Объем: 2000 символов.')">Функциональное тестирование</button></li>
+<li><button onclick="showPrompt('Тестирование юзабилити', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи тестирование юзабилити (оценка удобства использования магазина реальными пользователями). Объем: 2000 символов.')">Тестирование юзабилити</button></li>
+<li><button onclick="showPrompt('Тестирование производительности', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи тестирование производительности (проверка работы магазина при высокой нагрузке). Объем: 2000 символов.')">Тестирование производительности</button></li>
+<li><button onclick="showPrompt('Размещение магазина на хостинге', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи процесс размещения магазина на хостинге. Объем: 1000 символов.')">Размещение магазина на хостинге</button></li>
+<li><button onclick="showPrompt('Настройка домена и запуск', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи настройку домена и запуск магазина. Объем: 1000 символов.')">Настройка домена и запуск</button></li>
+<li><button onclick="showPrompt('SEO-оптимизация', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи SEO-оптимизацию (ключевые слова, мета-теги, структура сайта). Объем: 2000 символов.')">SEO-оптимизация</button></li>
+<li><button onclick="showPrompt('Контекстная реклама', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи настройку рекламных кампаний в Яндекс.Директ и Google Ads. Объем: 2000 символов.')">Контекстная реклама</button></li>
+<li><button onclick="showPrompt('Социальные сети', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи создание и ведение групп в социальных сетях, таргетированная реклама. Объем: 2000 символов.')">Социальные сети</button></li>
+<li><button onclick="showPrompt('Email-маркетинг', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи рассылку новостей и акций подписчикам. Объем: 2000 символов.')">Email-маркетинг</button></li>
+<li><button onclick="showPrompt('Выводы и рекомендации', 'Напиши заключение для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи выводы и рекомендации по дальнейшему развитию и продвижению магазина. Объем: 2000 символов.')">Выводы и рекомендации</button></li>
+<li><button onclick="showPrompt('Правовые аспекты электронной коммерции', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи правовые аспекты электронной коммерции, регулирование онлайн-торговли, политику конфиденциальности и обработки данных. Объем: 2000 символов.')">Правовые аспекты электронной коммерции</button></li>
+<li><button onclick="showPrompt('Техническая поддержка и обслуживание', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи организацию технической поддержки, обслуживание и обновление сайта. Объем: 2000 символов.')">Техническая поддержка и обслуживание</button></li>
+<li><button onclick="showPrompt('Оценка и анализ результатов', 'Напиши раздел для дипломной работы на тему \'Разработка интернет-магазина детской одежды на платформе WordPress\'. Включи анализ показателей эффективности, оценку возврата инвестиций (ROI). Объем: 3000 символов.')">Оценка и анализ результатов</button></li>
+
+        </ul>
+    </div>
+
+    <div class="container" id="promptContainer">
+        <h2 id="promptTitle"></h2>
+        <p id="promptText"></p>
+        <textarea id="promptInput"></textarea>
+        <button onclick="savePrompt()">Сохранить</button>
+    </div>
+
+    <div class="container">
+        <button onclick="generateDocument()">Собрать документ</button>
+        <pre id="generatedDocument"></pre>
     </div>
 
     <script>
-        function checkAnswers() {
-            const balloonValues1 = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-            const balloonValues2 = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
-            let score = 0;
-            let correctCount = 0;
+        const prompts = [];
+        
+        function showPrompt(title, text) {
+            document.getElementById('promptTitle').innerText = title;
+            document.getElementById('promptText').innerText = text;
+            document.getElementById('promptInput').value = '';
+            document.getElementById('promptContainer').style.display = 'flex';
+        }
 
-            // Check first set of balloons
-            document.querySelectorAll('.balloon-grid')[0].querySelectorAll('input[type="text"]').forEach((input, index) => {
-                if (input.value == balloonValues1[index]) {
-                    score += 10;
-                    correctCount++;
-                }
+        function savePrompt() {
+            const title = document.getElementById('promptTitle').innerText;
+            const text = document.getElementById('promptInput').value;
+            prompts.push({ title, text });
+            document.getElementById('promptContainer').style.display = 'none';
+        }
+
+        function generateDocument() {
+            let documentText = '';
+            prompts.forEach(prompt => {
+                documentText += `\n\n### ${prompt.title}\n${prompt.text}`;
             });
-
-            // Check second set of balloons
-            document.querySelectorAll('.balloon-grid')[1].querySelectorAll('input[type="text"]').forEach((input, index) => {
-                if (input.value == balloonValues1[index + 9]) {
-                    score += 10;
-                    correctCount++;
-                }
-            });
-
-            // Check third set of balloons (apples)
-            const appleValues = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-            document.querySelectorAll('.balloon-grid')[2].querySelectorAll('input[type="text"]').forEach((input, index) => {
-                if (input.value == appleValues[index]) {
-                    score += 10;
-                    correctCount++;
-                }
-            });
-
-            // Check train cars
-            const trainValues1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            document.querySelectorAll('.train')[0].querySelectorAll('input[type="text"]').forEach((input, index) => {
-                if (input.value == trainValues1[index]) {
-                    score += 10;
-                    correctCount++;
-                }
-            });
-
-            const trainValues2 = [100, 99, 98, 97, 96, 95, 94, 93, 92];
-            document.querySelectorAll('.train')[1].querySelectorAll('input[type="text"]').forEach((input, index) => {
-                if (input.value == trainValues2[index]) {
-                    score += 10;
-                    correctCount++;
-                }
-            });
-
-            document.getElementById('score').innerText = `Ваш счет: ${score} из 450`;
+            document.getElementById('generatedDocument').innerText = documentText;
         }
     </script>
 </body>
